@@ -1,0 +1,17 @@
+﻿@model List<AppUser>
+@{
+    ViewData["Title"] = "Add User To Role";
+}
+
+    <h1>Add User To Role @ViewBag.RoleName</h1>
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+            <td>@Html.ActionLink("Add to role","AddThisUserToRole","Roles", new { roleName = ViewBag.RoleName, userId = item.Id })</td>
+        </tr>
+    }
+</table>

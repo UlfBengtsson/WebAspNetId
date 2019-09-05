@@ -1,0 +1,27 @@
+﻿@model List<IdentityRole>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<a asp-action="Create">Add Role</a>
+
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+	{
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@Html.ActionLink("Add users to role", "AddUserToRoleAsync", new { roleName = item.Name })</td>
+        </tr>
+	}
+    </tbody>
+</table>
