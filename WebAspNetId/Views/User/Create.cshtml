@@ -1,0 +1,21 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Create" method="post">
+    <label asp-for="Email"></label>
+    <input asp-for="Email" />
+    <label asp-for="UserName"></label>
+    <input asp-for="UserName" />
+    <label asp-for="Age"></label>
+    <input asp-for="Age" />
+    <label asp-for="Password"></label>
+    <input asp-for="Password" />
+    <label asp-for="PasswordConfirm"></label>
+    <input asp-for="PasswordConfirm" />
+
+    <input class="btn btn-success" type="submit" value="Create" />
+</form>
